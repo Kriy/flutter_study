@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_study/commonwidgets/container_widget.dart';
-import 'package:flutter_study/commonwidgets/image_widget.dart';
-import 'package:flutter_study/commonwidgets/row_widget.dart';
-import 'package:flutter_study/commonwidgets/scaffold_widget.dart';
-import 'package:flutter_study/commonwidgets/text_widget.dart';
-import 'package:flutter_study/commonwidgets/widget_list.dart';
-
-import 'commonwidgets/appbar_widget.dart';
-import 'commonwidgets/column_widget.dart';
+import 'package:flutter_study/utils/app_theme.dart';
+import 'package:flutter_study/utils/route_util.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,23 +10,14 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Study',
-      routes: {
-        "widget_list": (_) => WidgetList(),
-        "scaffold_widget": (_) => ScaffoldWidget(),
-        "appbar_widget": (_) => AppbarWidget(),
-        "container_widget": (_) => ContainerWidget(),
-        "text_widget": (_) => TextWidget(),
-        "column_widget": (_) => ColumnWidget(),
-        "row_widget": (_) => RowWidget(),
-        "image_widget": (_) => ImageWidget(),
-      },
-      initialRoute: "/",
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(),
+      debugShowCheckedModeBanner: false,
+      initialRoute: AppRoutes.INITROUTE,
+      getPages: AppPages.list,
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      themeMode: ThemeMode.system,
     );
   }
 }
@@ -61,42 +46,18 @@ class _MyHomePageState extends State<MyHomePage> {
               width: double.infinity,
               height: 30,
             ),
-            MinWidthWidget(
-              onPressed: () {
-                Navigator.pushNamed(context, "widget_list");
-              },
-              title: "常用Widget讲解",
-            ),
-            MinWidthWidget(
-              onPressed: () {},
-              title: "     动画     ",
-            ),
+            // MinWidthWidget(
+            //   onPressed: () {
+            //     Navigator.pushNamed(context, "widget_list");
+            //   },
+            //   title: "常用Widget讲解",
+            // ),
+            // MinWidthWidget(
+            //   onPressed: () {},
+            //   title: "     动画     ",
+            // ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class MinWidthWidget extends StatelessWidget {
-  void Function()? onPressed;
-  String title;
-  double width;
-
-  MinWidthWidget({
-    this.onPressed,
-    this.title = "",
-    this.width = 100,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed ?? () {},
-      child: Container(
-        width: width,
-        alignment: Alignment.center,
-        child: Text(title),
       ),
     );
   }
