@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_study/main.dart';
+import 'package:flutter_study/pages/widget_page/widget_controller.dart';
+import 'package:get/get.dart';
 
-class WidgetList extends StatelessWidget {
+class WidgetPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var controller = Get.find<WidgetController>();
+    print("=======" + controller.hashCode.toString());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -17,6 +21,7 @@ class WidgetList extends StatelessWidget {
               width: double.infinity,
               height: 30,
             ),
+            Text('aaa')
             // MinWidthWidget(
             //   title: "Scaffold",
             //   onPressed: () {

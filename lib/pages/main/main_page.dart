@@ -27,11 +27,11 @@ class MainPage extends StatelessWidget {
           items: [
             _bottomNavigationBarItem(
               CupertinoIcons.home,
-              'Home',
+              '控件',
             ),
             _bottomNavigationBarItem(
               CupertinoIcons.book,
-              'News',
+              '动画',
             ),
           ],
         ),

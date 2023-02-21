@@ -6,9 +6,10 @@ import 'package:flutter_study/common_widgets/widget_list/image_widget.dart';
 import 'package:flutter_study/common_widgets/widget_list/row_widget.dart';
 import 'package:flutter_study/common_widgets/widget_list/scaffold_widget.dart';
 import 'package:flutter_study/common_widgets/widget_list/text_widget.dart';
-import 'package:flutter_study/common_widgets/widget_list/widget_list.dart';
 import 'package:flutter_study/pages/main/main_binding.dart';
 import 'package:flutter_study/pages/main/main_page.dart';
+import 'package:flutter_study/pages/widget_page/widget_binding.dart';
+import 'package:flutter_study/pages/widget_page/widget_page.dart';
 import 'package:get/get.dart';
 
 class AppRoutes {
@@ -29,7 +30,10 @@ class AppPages {
         name: AppRoutes.INITROUTE,
         page: () => MainPage(),
         binding: MainBinding()),
-    GetPage(name: AppRoutes.WIDGET_LIST, page: () => WidgetList()),
+    GetPage(
+        name: AppRoutes.WIDGET_LIST,
+        page: () => WidgetPage(),
+        binding: WidgetBinding()),
     GetPage(
         name: AppRoutes.APP_BAR,
         page: () => AppbarWidget(),
