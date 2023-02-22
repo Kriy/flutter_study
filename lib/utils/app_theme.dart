@@ -20,15 +20,13 @@ ThemeData lightTheme = ThemeData(
   appBarTheme: AppBarTheme(
     color: Colors.white,
     elevation: 0,
-    textTheme: TextTheme(
-      headline6: TextStyle(
-        color: Colors.black,
-        fontSize: 20,
-      ),
+    foregroundColor: Colors.black,
+    titleTextStyle: TextStyle(
+      color: Colors.black,
+      fontSize: 20,
     ),
   ),
 );
-
 
 ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
@@ -45,11 +43,9 @@ ThemeData darkTheme = ThemeData(
   appBarTheme: AppBarTheme(
     color: Colors.black,
     elevation: 0,
-    textTheme: TextTheme(
-      headline6: TextStyle(
-        color: Colors.white,
-        fontSize: 20,
-      ),
+    titleTextStyle: TextStyle(
+      color: Colors.white,
+      fontSize: 20,
     ),
   ),
 );
